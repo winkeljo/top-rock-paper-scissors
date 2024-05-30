@@ -10,4 +10,18 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
+function getHumanChoice() {
+    choice = prompt("What do you choose?", "Rock");
+
+    if (choice !== "Rock" && choice !== "Paper" && choice !== "Scissors") {
+        console.log("This was no correct choice! It will deafult to Rock.");
+        choice = "Rock";
+    }
+
+    return choice
+}
+
+userChoice = getHumanChoice()
+computerChoice = getComputerChoice()
+console.log(`Your choice: ${userChoice}`);
+console.log(`Computer choice: ${computerChoice}`);
