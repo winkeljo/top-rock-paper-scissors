@@ -13,7 +13,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     let choice = prompt("What do you choose?", "Rock");
 
-    if (choice !== "Rock" && choice !== "Paper" && choice !== "Scissors") {
+    if (choice.toLowerCase() !== "rock" && choice.toLowerCase() !== "paper" && choice.toLowerCase() !== "scissors") {
         console.log("This was no correct choice! It will deafult to Rock.");
         choice = "Rock";
     }
@@ -28,7 +28,7 @@ function playRound() {
     console.log(`Your choice: ${userChoice}`);
     console.log(`Computer choice: ${computerChoice}`);
 
-    evaluateRound(userChoice, computerChoice);    
+    evaluateRound(userChoice.toLowerCase(), computerChoice.toLowerCase());    
 }
 
 function evaluateRound(userChoice, computerChoice) {
@@ -36,22 +36,22 @@ function evaluateRound(userChoice, computerChoice) {
         console.log(`Remi! Both took ${userChoice}`)
     } else {
         switch (userChoice) {
-            case "Rock":
-                if (computerChoice === "Scissors") {
+            case "rock":
+                if (computerChoice === "scissors") {
                     processWinner("user");
                 } else {
                     processWinner("computer");
                 }
                 break;
-            case "Scissors":
-                if (computerChoice === "Paper") {
+            case "scissors":
+                if (computerChoice === "paper") {
                     processWinner("user");
                 } else {
                     processWinner("computer");
                 }
                 break;
-            case "Paper":
-                if (computerChoice === "Rock") {
+            case "paper":
+                if (computerChoice === "rock") {
                     processWinner("user");
                 } else {
                     processWinner("computer");
