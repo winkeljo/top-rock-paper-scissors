@@ -72,9 +72,27 @@ function processWinner(winner) {
         computerScore += 1;
         console.log("The Computer won this round, try again!");
     }
+
+}
+
+function playGame() {
+    userScore = 0;
+    computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playRound()
+    }
+
+    if (userScore > computerScore) {
+        console.log("You won");
+    } else if (computerScore > userScore) {
+        console.log("The computer won this time");
+    } else {
+        console.log("Remi!");
+    }
 }
 
 let userScore = 0;
 let computerScore = 0;
 
-playRound();
+playGame();
