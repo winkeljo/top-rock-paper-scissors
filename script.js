@@ -10,19 +10,7 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let choice = prompt("What do you choose?", "Rock");
-
-    if (choice.toLowerCase() !== "rock" && choice.toLowerCase() !== "paper" && choice.toLowerCase() !== "scissors") {
-        console.log("This was no correct choice! It will deafult to Rock.");
-        choice = "Rock";
-    }
-
-    return choice;
-}
-
-function playRound() {
-    const userChoice = getHumanChoice();
+function playRound(userChoice) {
     const computerChoice = getComputerChoice();
 
     console.log(`Your choice: ${userChoice}`);
@@ -102,6 +90,7 @@ paperButton.addEventListener("click", takeChoice)
 scissorsButton.addEventListener("click", takeChoice);
 
 function takeChoice(e) {
-    console.log(e.target.id);
+    const choice = e.target.id.charAt(0).toUpperCase() + e.target.id.slice(1)
+    playRound(choice);
 }
 
