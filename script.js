@@ -79,9 +79,7 @@ function playGame() {
     userScore = 0;
     computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-        playRound()
-    }
+    playRound();
 
     if (userScore > computerScore) {
         console.log("You won");
@@ -95,4 +93,15 @@ function playGame() {
 let userScore = 0;
 let computerScore = 0;
 
-playGame();
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+
+rockButton.addEventListener("click", takeChoice);
+paperButton.addEventListener("click", takeChoice)
+scissorsButton.addEventListener("click", takeChoice);
+
+function takeChoice(e) {
+    console.log(e.target.id);
+}
+
