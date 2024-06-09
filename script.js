@@ -21,7 +21,7 @@ function playRound(userChoice) {
 
 function evaluateRound(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
-        console.log(`Remi! Both took ${userChoice}`)
+        winnerDiv.textContent = `Remi! Both took ${userChoice}`;
     } else {
         switch (userChoice) {
             case "rock":
@@ -46,7 +46,7 @@ function evaluateRound(userChoice, computerChoice) {
                 }
                 break;
             default:
-                print("Something went wrong!");
+                winnerDiv.textContent = "Uups, something went wrong!";
                 break;
         }
     }
@@ -55,12 +55,14 @@ function evaluateRound(userChoice, computerChoice) {
 function processWinner(winner) {
     if (winner === "user") {
         userScore += 1;
-        console.log("Congratulations, you won this round!");
+        winnerDiv.textContent = "Congratulations, you won this round!";
     } else {
         computerScore += 1;
-        console.log("The Computer won this round, try again!");
+        winnerDiv.textContent = "The Computer won this round, try again!";
     }
 
+    userScoreDiv.textContent = `Your score: ${userScore}`;
+    computerScoreDiv.textContent = `Computer score: ${computerScore}`;
 }
 
 function playGame() {
@@ -96,4 +98,7 @@ function takeChoice(e) {
 
 const userChoiceDiv = document.querySelector("#userchoice");
 const computerChoiceDiv = document.querySelector("#computerchoice");
+const winnerDiv = document.querySelector("#winner");
+const userScoreDiv = document.querySelector("#userscore");
+const computerScoreDiv = document.querySelector("#computerscore");
 
