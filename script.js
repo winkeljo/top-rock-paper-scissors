@@ -63,20 +63,12 @@ function processWinner(winner) {
 
     userScoreDiv.textContent = `Your score: ${userScore}`;
     computerScoreDiv.textContent = `Computer score: ${computerScore}`;
-}
 
-function playGame() {
-    userScore = 0;
-    computerScore = 0;
-
-    playRound();
-
-    if (userScore > computerScore) {
-        console.log("You won");
-    } else if (computerScore > userScore) {
-        console.log("The computer won this time");
-    } else {
-        console.log("Remi!");
+    if (userScore === 5 && computerScore < 5) {
+        resultDiv.textContent = "Congratulations, you won!";
+    }
+    if (computerScore === 5 && userScore < 5) {
+        resultDiv.textContent = "The computer won this time, reload the page and try again";
     }
 }
 
@@ -101,4 +93,5 @@ const computerChoiceDiv = document.querySelector("#computerchoice");
 const winnerDiv = document.querySelector("#winner");
 const userScoreDiv = document.querySelector("#userscore");
 const computerScoreDiv = document.querySelector("#computerscore");
+const resultDiv = documentq.querySelector("#result");
 
