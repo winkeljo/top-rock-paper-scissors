@@ -13,8 +13,8 @@ function getComputerChoice() {
 function playRound(userChoice) {
     const computerChoice = getComputerChoice();
 
-    console.log(`Your choice: ${userChoice}`);
-    console.log(`Computer choice: ${computerChoice}`);
+    userChoiceDiv.textContent = `Your choice: ${userChoice}`;
+    computerChoiceDiv.textContent = `Computer choice: ${computerChoice}`;
 
     evaluateRound(userChoice.toLowerCase(), computerChoice.toLowerCase());    
 }
@@ -93,4 +93,7 @@ function takeChoice(e) {
     const choice = e.target.id.charAt(0).toUpperCase() + e.target.id.slice(1)
     playRound(choice);
 }
+
+const userChoiceDiv = document.querySelector("#userchoice");
+const computerChoiceDiv = document.querySelector("#computerchoice");
 
