@@ -93,5 +93,17 @@ const computerChoiceDiv = document.querySelector("#computerchoice");
 const winnerDiv = document.querySelector("#winner");
 const userScoreDiv = document.querySelector("#userscore");
 const computerScoreDiv = document.querySelector("#computerscore");
-const resultDiv = documentq.querySelector("#result");
+const resultDiv = document.querySelector("#result");
+
+const restartButton = document.querySelector("#restartButton");
+restartButton.addEventListener("click", () => {
+    userScore = 0;
+    computerScore = 0;
+    userChoiceDiv.textContent = "";
+    computerChoiceDiv.textContent = "";
+    winnerDiv.textContent = "";
+    userScoreDiv.textContent = "";
+    computerScoreDiv.textContent = "";
+    resultDiv.textContent = "";
+});
 

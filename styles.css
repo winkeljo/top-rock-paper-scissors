@@ -23,9 +23,15 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
-.selection div {
-    height: 50px;
+.information div {
+    height: 30px;
+}
+
+.information button {
+    height: 60px;
+    border-radius: 8px;
+    font-size: large;
 }
