@@ -17,3 +17,15 @@ h1 {
     border-radius: 8px;
     font-size: large;
 }
+
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.selection div {
+    height: 50px;
+}
